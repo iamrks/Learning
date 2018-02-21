@@ -10,7 +10,7 @@ namespace Learning.Data
 
         public UnitOfWork(LearningContext ctx)
         {
-            _ctx = new LearningContext();
+            _ctx = ctx;
         }
 
         private IStudentRepository _studentRepository;
