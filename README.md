@@ -7,3 +7,4 @@
 - Repository Pattern
 - Dependency Injection using Unity
 - CORS Enabling
+- Added Gzip Compression Functionality

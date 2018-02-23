@@ -9,6 +9,7 @@ using Newtonsoft.Json.Serialization;
 using Learning.Data;
 using Learning.WebApi.DI;
 using Learning.BusinessLogic.Infrastructure.Interfaces;
+using Learning.WebApi.Filters;
 
 namespace Learning.WebApi
 {
@@ -32,6 +33,9 @@ namespace Learning.WebApi
             // Enable CORS
             var corsAttr = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(corsAttr);
+
+            // Register global filters
+            config.Filters.Add(new GZipCompressionAttribute());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
