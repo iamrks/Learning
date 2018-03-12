@@ -9,4 +9,4 @@
 - CORS Enabling
 - Gzip Compression
 - OWIN Integration
-	* Also make changes to work HELP documentation to work with OWIN
+	* Also make changes to HELP documentation code to work with OWIN
