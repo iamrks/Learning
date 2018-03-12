@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Web;
+﻿using Owin;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -10,15 +6,20 @@ using System.Web.Routing;
 
 namespace Learning.WebApi
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class Startup
     {
-        protected void Application_Start()
+        public static HttpConfiguration config = new HttpConfiguration();
+
+        public void Configuration(IAppBuilder app)
         {
+            WebApiConfig.Register(config);
+
             AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            app.UseWebApi(config);
         }
     }
 }

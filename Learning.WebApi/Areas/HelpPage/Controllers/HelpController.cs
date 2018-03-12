@@ -14,7 +14,7 @@ namespace Learning.WebApi.Areas.HelpPage.Controllers
         private const string ErrorViewName = "Error";
 
         public HelpController()
-            : this(GlobalConfiguration.Configuration)
+            : this(Startup.config)
         {
         }
 
