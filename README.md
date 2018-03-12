@@ -8,3 +8,5 @@
 - Dependency Injection using Unity
 - CORS Enabling
 - Gzip Compression
+- OWIN Integration
+	* Also make changes to work HELP documentation to work with OWIN
